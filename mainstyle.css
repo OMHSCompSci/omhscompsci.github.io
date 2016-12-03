@@ -24,7 +24,7 @@ li.horiznav {
     font-family: Arial;
 }
 
-li a {
+li.horiznav a {
     text-decoration: none;
     display: block;
     color:inherit;
@@ -66,6 +66,13 @@ h2 {
     font-family: Arial;
     text-align: center;
     padding: 15px;
+}
+
+h3 {
+    font-family: Arial;
+    padding: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 footer {
@@ -128,13 +135,19 @@ div#postinfo {
     padding: 2px;
 }
 
+div#commits {
 
+}
+
+p#norm {
+    font-family: sans-serif;
+    text-align: left;
+}
 
 div#main {
     background-color:white;
     border-radius: 8px;
     margin: 5px 2% 5px 2%;
     display:block;
-    height:100%;
     padding:2px;
 }

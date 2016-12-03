@@ -4,6 +4,23 @@
 		<link rel="stylesheet" href="./mainstyle.css">
         <script src="jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="./defaultscripts.js"></script>
+        <style>
+            /*This can be moved to main style if needed*/
+            #faq-list {
+                font-family: serif;
+                font-size: 24px;
+            }
+            
+            #faq-list-question {
+                padding:5px;
+            }
+            
+            #faq-list-answer {
+                font-size:16px;
+                font-family: Arial;
+                color: dimgray;
+            }
+        </style>
         <title>OMHS CSC</title>
 	</head>
 	<!--The head will have an image, most likely a banner-->
@@ -16,8 +33,10 @@
         <ul class="horiznav">
             <a href="index.html"><li class="horiznav" id="current">Home</li></a>
             <a href="about.html"><li class="horiznav">About</li></a>
-            <a href="posts.html"><li class="horiznav">Posts</li></a>
+            <!--<a href="posts.html"><li class="horiznav">Posts</li></a>-->
             <a href="members.html"><li class="horiznav">Members</li></a>
+            <a href="progress.html"><li class="horiznav">Progress</li></a>
+            <a href="downloads.html"><li class="horiznav">Downloads</li></a>
             <a href="contact.html"><li class="horiznav">Contact</li></a>
         </ul>
         <!--End Header section-->
@@ -27,6 +46,29 @@
             <h2>Oakland Mills High School Computer Science (Club) (OMCS / OMCSC)</h2><br/>
             <p>The OMCSC is a club where people can work together towards a common goal using computer science. This year
             that goal is a game! This website provides information on the club, its members, and what's happening. Here's a link to our <a href="http://github.com/OMHSCompSci">GitHub</a> account.</p>
+            <h3>Quick FAQs</h3>
+            <ul id="faq-list">
+                <li id="faq-list-question">
+                    When do you meet?
+                    <div id="faq-list-answer">We meet on Tuesdays from 2:15 to 3:15. If you can't make it at that time, don't let that discourage you from joining. You should try <a href="contact.html">contacting</a> us and ask about what you can do. Be sure to describe your situation.</div>
+                </li>
+                <li id="faq-list-question">
+                    Where do you meet?
+                    <div id="faq-list-answer">We meet in the Computer Science room, Room 404.</div>
+                </li>
+                <li id="faq-list-question">
+                    Who is your sponsoring teacher?
+                    <div id="faq-list-answer">Mr. Mosier is the Compuer Science Club's sponsor. He lets us use his room to meet, and will answer questions that we have as well.</div>
+                </li>
+                <li id="faq-list-question">
+                    I'm interested but don't know anything about Computer Science, what do I do?
+                    <div id="faq-list-answer">You should check out the <a href="about.html">About</a> page. Having no prior knowledge won't hold you back, everyone is here to help.</div>
+                </li>
+                <li id="faq-list-question">
+                    What other things do you do?
+                    <div id="faq-list-answer">A few things. Besides our project, people are able to help each other learn new ideas and skills. Also, occasionally we have pizza or some other food during a meeting. Another thing is that if you have a request for a small project or other help, some people in this club might help you with it. All you'd have to do is either <a href="contact.html">email us</a> or show up at a meeting and ask.</div>
+                </li>
+            </ul>
         </div>
 	</body>
     <footer>
