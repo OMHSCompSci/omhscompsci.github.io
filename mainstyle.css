@@ -56,10 +56,10 @@ ul.horiznav {
 
 p {
     font-family: Monaco;
-    text-align: center;
     padding: 5px;
     margin-left: 30px;
     margin-right: 30px;
+    text-indent: 50px;
 }
 
 h2 {
@@ -139,9 +139,14 @@ div#commits {
 
 }
 
+p#center {
+    text-align: center;
+    text-indent: 0px;
+}
+
 p#norm {
     font-family: sans-serif;
-    text-align: left;
+    text-indent:0px;
 }
 
 div#main {
