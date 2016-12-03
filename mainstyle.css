@@ -1,0 +1,140 @@
+body {
+    background-color: blacklack;
+}
+
+#headbanner {
+    display: block;
+    width:100%;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: orange;
+    background-size:cover;
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color:white;
+}
+
+li.horiznav {
+    float:left;
+    display: block;
+    padding: 14px 16px;
+    color:gray;
+    text-align: center;
+    font-family: Arial;
+}
+
+li a {
+    text-decoration: none;
+    display: block;
+    color:inherit;
+}
+
+a {
+    color:inhert;
+    
+}
+
+#current {
+    background-color:orange;
+    color: black;
+}
+
+li.horiznav:hover {
+    color:black;
+    background-color:gray;
+}
+
+ul.horiznav {
+    background-color: white;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+p {
+    font-family: Monaco;
+    text-align: center;
+    padding: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+h2 {
+    font-family: Arial;
+    text-align: center;
+    padding: 15px;
+}
+
+footer {
+    color:gray;
+    font-family: monospace;
+    font-size: 12px;
+    position:relative;
+    display: block;
+    text-align: center;
+    left:0;
+    bottom: 0;
+    right:0;
+}
+
+table.memberlist {
+    display: block;
+    padding: 10px;
+    position: relative;
+    font-size: 24px;
+    text-align: center;
+    margin-left: 0;
+    font-family: Arial;
+    
+}
+
+tr {
+    font-family: inherit;
+    font-size: inherit;  
+}
+
+td {
+    padding:15px;
+}
+
+div#post {
+    background-color:white;
+    border-radius: 8px;
+    margin: 30px 5% 40px 5%;
+}
+
+div#posttitle {
+    font-size:32px;
+    color:black;
+    font-family: Times new Roman;
+    padding:2px;
+}
+
+div#postbody {
+    padding: 2px;
+    font-family: Arial;
+    font-size: 18;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+div#postinfo {
+    font-family: monaco;
+    font-size:12px;
+    color:gray;
+    padding: 2px;
+}
+
+
+
+div#main {
+    background-color:white;
+    border-radius: 8px;
+    margin: 5px 2% 5px 2%;
+    display:block;
+    height:100%;
+    padding:2px;
+}
