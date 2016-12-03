@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./mainstyle.css">
+        <script src="jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="./defaultscripts.js"></script>
+        <style>
+            /* This can be moved to mainstyle.css if needed*/
+            #progress-list {
+                font-family: "Arial Bold";
+                margin-left: 30px;
+                margin-right: 30px;
+                font-size: 24px;
+                color:black;
+            }
+            
+            #progress-list-item {
+                
+                padding-bottom: 10px;
+            }
+            
+            #code-goal {
+                color:burlywood;
+            }
+            
+            #art-goal {
+                color:darkseagreen;
+            }
+            
+            #completed-goal {
+                color:goldenrod;
+            }
+            #progress-item-desc {
+                font-family: "Monaco";
+                font-size: 16px;
+            }
+            #progress-item-desc:hover {
+                color:gray;
+            }
+        </style>
+        <title>OMHS CSC</title>
+	</head>
+	<!--The head will have an image, most likely a banner-->
+	<body>
+        <a href="index.html">
+            <div id="headbanner" style="background-image:url('./Pictures/OMCSBanner.png')"></div>
+        </a>
+        <!--This is the head image, clicking it will take you to the main page?-->
+        <!--List of options; current options include "Home" "About" "Members" "Contact"-->
+        <ul class="horiznav">
+            <a href="index.html"><li class="horiznav">Home</li></a>
+            <a href="about.html"><li class="horiznav">About</li></a>
+            <a href="posts.html"><li class="horiznav">Posts</li></a>
+            <a href="members.html"><li class="horiznav">Members</li></a>
+            <a href="progress.html"><li class="horiznav" id="current">Progress</li></a>
+            <a href="contact.html"><li class="horiznav">Contact</li></a>
+        </ul>
+        <!--End Header section-->
+        <!--Begin body-->
+        <hr/>
+        <div id="main">
+            <h2>Project Progress</h2><br/>
+            <p>This page helps you view the progress we've made, and what we're working on now!</p>
+            <!--<iframe src="http://www.github.com"></iframe> Find way to display commits-->
+            
+            <!-- JavaScript stuff here (Only load if there's something to show)-->
+            <h2 id="commits">Commit History</h2>
+            <div id="commits"><p>You can go <a href="https://github.com/OMHSCompSci/StoryRPGGame/commits/master">here</a> to see our recent commits.</p></div>
+            
+            <h2 id="code-goal">Current Code Goals</h2>
+            <p>
+                These are the current coded goals we're working towards.
+            </p>
+            <ul id="progress-list">
+                <li id="progress-list-item">
+                    <!--Title-->GPU usage
+                    <div id="progress-item-desc">Use the GPU to render the visual components of the game.</div>
+                </li>
+                <li id="progress-list-item">
+                    <!--Title-->World Correction
+                    <div id="progress-item-desc">Attempt to change the strucutre of the World class to make it more suitable for dynamic use.</div>
+                </li>
+                <li id="progress-list-item">
+                    <!--Title-->Fix Collisions (Physics)
+                    <div id="progress-item-desc">Correct the changes to the velocity and position of the player to become accurate. (Reduce glitchy movement).</div>
+                </li>
+                <li id="progress-list-item">
+                    <!--Title-->Friction (?)
+                    <div id="progress-item-desc">Create something which will move Entities with the platform it's on. (Most likely friction).</div>
+                </li>
+            </ul>
+            
+            <h2 id="art-goal">Current Art Goals</h2>
+            <p>
+                These are the current art goals we're working towards.
+            </p>
+            <ul id="progress-list">
+                <li id="progress-list-item">
+                    <!--Title-->Better Project Name
+                    <div id="progress-item-desc">"Deceit" just isn't working.</div>
+                </li>
+                <li id="progress-list-item">
+                    <!--Title-->Title Screen Background
+                    <div id="progress-item-desc">The art matches the overall idea of the game, but it doesn't match how it should appear as. It should appear more happy / light.</div>
+                </li>
+            </ul>
+            
+            <h2 id="completed-goal">Completed Goals</h2>
+            <p>
+                These are all of the goals we've met so far.
+            </p>
+            <ul id="progress-list">
+                <li id="progress-list-item">
+                    <!--Title-->Have our first meeting
+                    <div id="progress-item-desc">This was the beginning.</div>
+                </li>
+                <li id="progress-list-item">
+                    <!--Title-->Think of a project
+                    <div id="progress-item-desc">We thought of a few ideas for a game.</div>
+                </li>
+                <li id="progress-list-item">
+                    <!--Title-->Start
+                    <div id="progress-item-desc">We slowly began progress on our project.</div>
+                </li>
+                <li id="progress-list-item">
+                    <!--Title-->Abstract Enemy
+                    <div id="progress-item-desc">Turn enemy into an abstract class rather than just a ghost.</div>
+                </li>
+                <li id="progress-list-item">
+                    <!--Title-->Basic Entity Hierarchy
+                    <div id="progress-item-desc">Create a logical entity hierarchy starting from Entity and down.</div>
+                </li>
+                 <li id="progress-list-item">
+                    <!--Title-->Moving Platforms (With player)
+                    <div id="progress-item-desc">Platforms move, but the player’s velocity is not affected by the platform (we want it to be affected by the moving platform).</div>
+                </li>
+            </ul>
+        </div>
+	</body>
+    <footer>
+        The Oakland Mills High School Computer Science Club was created in the 2016-2017 school year.
+    </footer>
+</html>
