@@ -139,6 +139,11 @@ div#commits {
 
 }
 
+p#norm {
+    font-family: sans-serif;
+    text-align: left;
+}
+
 div#main {
     background-color:white;
     border-radius: 8px;
