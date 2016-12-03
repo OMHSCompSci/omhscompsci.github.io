@@ -14,20 +14,28 @@
         <!--This is the head image, clicking it will take you to the main page?-->
         <!--List of options; current options include "Home" "About" "Members" "Contact"-->
         <ul class="horiznav">
-            <a href="index.html"><li class="horiznav" id="current">Home</li></a>
+            <a href="index.html"><li class="horiznav">Home</li></a>
             <a href="about.html"><li class="horiznav">About</li></a>
             <a href="posts.html"><li class="horiznav">Posts</li></a>
             <a href="members.html"><li class="horiznav">Members</li></a>
-            <a href="progress.html"><li class="horiznav">Progress</li></a>
+            <a href="progress.html"><li class="horiznav" id="current">Progress</li></a>
             <a href="contact.html"><li class="horiznav">Contact</li></a>
         </ul>
         <!--End Header section-->
         <!--Begin body-->
         <hr/>
         <div id="main">
-            <h2>Oakland Mills High School Computer Science (Club) (OMCS / OMCSC)</h2><br/>
-            <p>The OMCSC is a club where people can work together towards a common goal using computer science. This year
-            that goal is a game! This website provides information on the club, its members, and what's happening. Here's a link to our <a href="http://github.com/OMHSCompSci">GitHub</a> account.</p>
+            <h2>Project Progress</h2><br/>
+            <p>This page helps you view the progress we've made, and what we're working on now!</p>
+            <!--<iframe src="http://www.github.com"></iframe> Find way to display commits-->
+            
+            <!-- JavaScript stuff here (Only load if there's something to show)-->
+            <h2 id="commits"></h2>
+            <div id="commits"></div>
+            
+            <p>
+            
+            </p>
         </div>
 	</body>
     <footer>
