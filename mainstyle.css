@@ -24,7 +24,7 @@ li.horiznav {
     font-family: Arial;
 }
 
-li a {
+li.horiznav a {
     text-decoration: none;
     display: block;
     color:inherit;
@@ -66,6 +66,13 @@ h2 {
     font-family: Arial;
     text-align: center;
     padding: 15px;
+}
+
+h3 {
+    font-family: Arial;
+    padding: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 footer {
