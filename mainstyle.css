@@ -128,7 +128,9 @@ div#postinfo {
     padding: 2px;
 }
 
-
+div#commits {
+    display: none;
+}
 
 div#main {
     background-color:white;
