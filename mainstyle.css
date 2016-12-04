@@ -90,18 +90,18 @@ footer {
 
 table.memberlist {
     display: block;
-    padding: 10px;
+    padding: 15px;
     position: relative;
     font-size: 24px;
     text-align: center;
-    margin-left: 0;
+    /*margin-left: 0;*/
     font-family: Arial;
     
 }
 
 tr {
     font-family: inherit;
-    font-size: inherit;  
+    font-size: inherit;
 }
 
 td {
