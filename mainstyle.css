@@ -4,7 +4,8 @@ body {
 
 #headbanner {
     display: block;
-    width:100%;
+    //width:100%;
+    object-fit: contain;
     height: 175px;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -155,4 +156,12 @@ div#main {
     margin: 5px 2% 5px 2%;
     display:block;
     padding:2px;
+}
+
+#faq-list {
+    list-style-type: none;
+}
+
+#faq-list-answer {
+    padding: 1% 0 0 3%;
 }
