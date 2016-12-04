@@ -1,7 +1,21 @@
 <html><head>
 		<link rel="stylesheet" href="./mainstyle.css">
+        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDsXqa0pTr_iaT0-SUUW0g4oE8R8rQW1fQ",
+                authDomain: "clubsite-3451c.firebaseapp.com",
+                databaseURL: "https://clubsite-3451c.firebaseio.com",
+                storageBucket: "clubsite-3451c.appspot.com",
+                messagingSenderId: "51997785049"
+            };
+            firebase.initializeApp(config);
+        </script>
         <script src="jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="./defaultscripts.js"></script>
+        <script type="text/javascript" src="./databasescript.js"></script>
+        <script type="text/javascript" src="./memberscript.js"></script>
         <title>OMHS CSC</title>
 	<style>
 		td {
@@ -41,19 +55,19 @@
                 <tr>
   
 		    <td></td>
-			<td>Zachary Carr &amp; Jonah Freeman</td>
+			<td id="founders">Zachary Carr &amp; Jonah Freeman</td>
   <td></td>
 </tr>
                 <tr>
 			<td></td>
                     <td>
-			    <strong><u>Sponser</u></strong>
+			    <strong><u>Sponsor</u></strong>
                     </td>
 			<td></td>
 		</tr>
 		<tr>
 			<td></td>
-                    <td>
+                    <td id="sponsor">
                         Michael Mosier
                     </td>
 			<td></td>
