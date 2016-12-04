@@ -9,13 +9,57 @@ $(document).ready(function() {
                         //do nothing
                         
                     } else {
-                        $(".memberlist").html("");
+                        //$(".memberlist").html("");
                         //Should clear
+                        var founderArray = [];
+                        var sponsorArray = [];
+                        var normArray = [];
                         for (var i = 0; i < memberArray.length; i++)
                         {
                             var member = memberArray[i];
-                            $(".memberlist").append("<tr><td>" + member.position + "</td><td>" + member.name + "</td></tr>");
+                            if(member.position.toLowerCase() === "founder") {
+                                founderArray.push(member);
+                            } else if (member.position.toLowerCase() === "sponsor") {
+                                sponsorArray.push(member);
+                            } else {
+                                normArray.push(member);
+                            }
+                            //$(".memberlist").append("<tr><td>" + member.position + "</td><td>" + member.name + "</td></tr>");
                         }
-                    }
+                        
+                       // $("#founders").html("<tr><td>");
+                        var founderString = "<tr><td>";
+                        for (var i = 0; i < founderArray.length; i++) {
+                            founderString += founderArray[i].name;
+                            if(i+1 < founderArray.length) {
+                                founderString+=", ";
+                            }
+                        }
+                        founderString+="</td></tr>";
+                        $("#founders").html(founderString);
+                       // $("#founders").append("</td></tr>");
+                        
+                        //$("#sponsors").html("<tr><td>");
+                        var sponserString = "<tr><td>";
+                        for (var i = 0; i < sponsorArray.length; i++) {
+                            sponserString += sponsorArray[i].name;
+                            if(i+1 < sponsorArray.length) {
+                                sponserString+=", ";
+                            }
+                        }
+                        sponserString+="</td></tr>";
+                        $("#sponsors").html(sponserString);
+                        
+                        var memString = "<tbody><tr>";
+                        for (var i = 0; i < normArray.length; i++) {
+                            memString += "<td>" + normArray[i].name + "</td>";
+                            if(i%3 == 2) {
+                                memString+="</tr><tr>";
+                            }
+                            
+                            }
+                        }
+                        memString+="</tr></tbody>";
+                        $("#members").html(memString);
                 });
 });
