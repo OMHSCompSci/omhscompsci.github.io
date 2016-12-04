@@ -1,13 +1,34 @@
-<html><head>
+<html>
+    <head>
 		<link rel="stylesheet" href="./mainstyle.css">
+        
+        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyDsXqa0pTr_iaT0-SUUW0g4oE8R8rQW1fQ",
+                authDomain: "clubsite-3451c.firebaseapp.com",
+                databaseURL: "https://clubsite-3451c.firebaseio.com",
+                storageBucket: "clubsite-3451c.appspot.com",
+                messagingSenderId: "51997785049"
+            };
+            firebase.initializeApp(config);
+        </script>
         <script src="jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="./defaultscripts.js"></script>
+        <script type="text/javascript" src="./databasescript.js"></script>
+        <script type="text/javascript" src="./memberscript.js"></script>
         <title>OMHS CSC</title>
-	<style>
-		td {
-			width: 25%;
-		}
-	</style><link id="noteanywherecss" media="screen" type="text/css" rel="stylesheet" href="data:text/css,.note-anywhere%20.closebutton%7Bbackground-image%3A%20url%28chrome-extension%3A//bohahkiiknkelflnjjlipnaeapefmjbh/asset/deleteButton.png%29%3B%7D%0A"></head>
+	   <style>
+		  td {
+			 width: 25%;
+		  }
+           tr {
+               width:100%;
+           }
+	   </style>
+        <!-- what is this -->
+        <link id="noteanywherecss" media="screen" type="text/css" rel="stylesheet" href="data:text/css,.note-anywhere%20.closebutton%7Bbackground-image%3A%20url%28chrome-extension%3A//bohahkiiknkelflnjjlipnaeapefmjbh/asset/deleteButton.png%29%3B%7D%0A"></head>
 	
 	<!--The head will have an image, most likely a banner-->
 	<body>
@@ -30,6 +51,24 @@
         <hr>
         <div id="main">
             <h2>OMCSC Members</h2>
+            <br/>
+            <h2><u>Founders</u></h2>
+            <table class="memberlist" id="founders">
+                
+                <!-- There should only be one row here-->
+            </table>
+            <br/>
+            <h2><u>Sponsors</u></h2>
+            <table class="memberlist" id="sponsors">
+                <!-- There should only be one row here-->
+            </table>
+            <br/>
+            <h2><u>Members</u></h2>
+            <table class="memberlist" id="members">
+                <!-- Column x Row = 3xN where N = #needed-->
+            </table>
+            
+            
             <table class="memberlist">
                 <tbody><tr>
 			<td></td>
