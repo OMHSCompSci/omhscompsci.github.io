@@ -1,5 +1,5 @@
 <html>
-	<head>
+    <head>
 		<link rel="stylesheet" href="./mainstyle.css">
         <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
         <script>
@@ -18,7 +18,17 @@
         <script type="text/javascript" src="./databasescript.js"></script>
         <script type="text/javascript" src="./memberscript.js"></script>
         <title>OMHS CSC</title>
-	</head>
+	   <style>
+		  td {
+			 width: 25%;
+		  }
+           tr {
+               width:100%;
+           }
+	   </style>
+        <!-- what is this -->
+        <link id="noteanywherecss" media="screen" type="text/css" rel="stylesheet" href="data:text/css,.note-anywhere%20.closebutton%7Bbackground-image%3A%20url%28chrome-extension%3A//bohahkiiknkelflnjjlipnaeapefmjbh/asset/deleteButton.png%29%3B%7D%0A"></head>
+	
 	<!--The head will have an image, most likely a banner-->
 	<body>
         <a href="index.html">
@@ -37,15 +47,83 @@
         </ul>
         <!--End Header section-->
         <!--Begin body-->
-        <hr/>
+        <hr>
         <div id="main">
-            <h2>OMCSC Members</h2><br/>
-            <table class="memberlist">
+            <h2>OMCSC Members</h2>
+            <br/>
+            <h2><u>Founders</u></h2>
+            <table class="memberlist" id="founders">
+                
+                <!-- There should only be one row here-->
+            </table>
+            <br/>
+            <h2><u>Sponsors</u></h2>
+            <table class="memberlist" id="sponsors">
+                <!-- There should only be one row here-->
+            </table>
+            <br/>
+            <h2><u>Members</u></h2>
+            <table class="memberlist" id="members">
+                <!-- Column x Row = 3xN where N = #needed-->
             </table>
             
+            
+            <table class="memberlist">
+                <tbody><tr>
+			<td></td>
+                    <td>
+			    <strong><u>Founders</u></strong>
+                    </td>
+			<td></td>
+                </tr>
+                <tr>
+  
+		    <td></td>
+			<td id="founders">Zachary Carr &amp; Jonah Freeman</td>
+  <td></td>
+</tr>
+                <tr>
+			<td></td>
+                    <td>
+			    <strong><u>Sponsor</u></strong>
+                    </td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+                    <td id="sponsor">
+                        Michael Mosier
+                    </td>
+			<td></td>
+                </tr>
+                <tr>
+			<td></td>
+                    	<td>
+				<strong><u>Members</u></strong>
+		   	</td>
+			<td></td>
+                </tr><tr>
+			<td>Kaleo Ngo</td>
+			<td>Cameron Nikiel</td>
+			<td>Kyle Sluss</td>
+                </tr>
+                <tr>
+			<td>Morgan Vanderhei</td>
+			<td>Philip Tian</td>
+			<td>Jacob Kopp</td>
+                </tr>
+                <tr>
+                  	<td>Joni Kim</td>
+			<td>Oluwole Odeseye</td>
+			<td>Gabriel Pillay</td>
+                </tr>
+
+            </tbody></table>
+            
         </div>
-	</body>
+	
     <footer>
         The Oakland Mills High School Computer Science Club was created in the 2016-2017 school year.
     </footer>
-</html>
+
+</body></html>
