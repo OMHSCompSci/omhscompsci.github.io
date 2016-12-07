@@ -40,14 +40,14 @@ $(document).ready(function() {
                        // $("#founders").append("</td></tr>");
                         
                         //$("#sponsors").html("<tr><td>");
-                        var sponserString = "<tr><td>";
+                        var sponserString = "<tbody><tr><td>";
                         for (var i = 0; i < sponsorArray.length; i++) {
                             sponserString += sponsorArray[i].name;
                             if(i+1 < sponsorArray.length) {
                                 sponserString+=", ";
                             }
                         }
-                        sponserString+="</td></tr>";
+                        sponserString+="</td></tr></tbody>";
                         $("#sponsors").html(sponserString);
                         
                         var memString = "<tbody><tr>";
