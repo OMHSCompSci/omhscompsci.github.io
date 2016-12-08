@@ -80,7 +80,7 @@ function loadCommits(repoId, $element, max) {
         $commitArray = [];
         for (var i = 0; i < $branchArray.length; i++) {
             //Inside branch i
-            $.get("https://api.github.com/repositories/" + repoId + "/commits/" + $branchArray[i].name, function(coms) {
+            $.get("https://api.github.com/repositories/" + repoId + "/commits?sha=" + $branchArray[i].name, function(coms) {
                 //At commits for branch i
                 var $branchICommits = coms;
                 alert($branchICommits[i].commit.author.name);
@@ -94,6 +94,8 @@ function loadCommits(repoId, $element, max) {
         for(var i = 0; i < $commitArray.length; i++) {
             $commitObjs.push(createCommitObject($commitArray[i]));
         }
+        $commitObjs = simplifyCommitArray($commitObjs);
+        $commitObjs = orderCommitObjsFromMap($commitObjs);
         //This SHOULD get all the commits
         changed = true;
         while (changed) {
@@ -129,6 +131,18 @@ function loadCommits(repoId, $element, max) {
     });
 }
 
+
+function orderCommitObjsFromMap($commitsMap) {
+    //YOu know what to do/
+}
+
+function simplifyCommitArrayToMap($commits) {
+    var commitMap = [];
+    for(var i = 0; i < $commits.length; i++) {
+        commitMap[$commits[i].sha:$commits[i]];   
+    }
+    return commitMap;
+}
 
 //Creates a commit object (helps reduce code lines + improve readability)
 function createCommitObject(commitPre) {
