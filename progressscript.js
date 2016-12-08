@@ -9,7 +9,8 @@ $(document).ready(function() {
             commitsString+=("<tr class=\"commit-item\">");
             name = checkSubs($commitArray[i].commit.author.name) + ", " + formatDate($commitArray[i].commit.author.date);
             commitsString+=("<td>" + name + "</td>");
-            commitsString+=("<td><a href=\"" + $commitArray[i].html_url + "\">" + $commitArray[i].commit.message + "</a></td>");
+            comMsg = formatMessage($commitArray[i].commit.message);
+            commitsString+=("<td><a href=\"" + $commitArray[i].html_url + "\">" + comMsg + "</a></td>");
             commitsString+="</tr>";
         }
         commitsString+="</table>";
@@ -26,7 +27,8 @@ $(document).ready(function() {
             commitsString+=("<tr class=\"commit-item\">");
             name = checkSubs($commitArray[i].commit.author.name) + ", " + formatDate($commitArray[i].commit.author.date);
             commitsString+=("<td>" + name + "</td>");
-            commitsString+=("<td><a href=\"" + $commitArray[i].html_url + "\">" + $commitArray[i].commit.message + "</a></td>");
+            comMsg = formatMessage($commitArray[i].commit.message);
+            commitsString+=("<td><a href=\"" + $commitArray[i].html_url + "\">" + comMsg + "</a></td>");
             commitsString+="</tr>";
         }
         commitsString+="</table>";
@@ -34,6 +36,19 @@ $(document).ready(function() {
        });
 });
 
+
+function formatMessage(message) {
+    var hasBody = message.includes("\n\n");
+    var finString ="";
+    if (hasBody) {
+        finString+="[<strong>";
+        finString+=message.substring(0,message.indexOf("\n\n")) +"</strong>]: <em><span style=\"color:gray;\">" + message.substring(message.indexOf("\n\n")) + "</span></em>";
+    } else {
+        finString+=message;
+    }
+    return finString;
+    
+}
 
 function formatDate(gitDate) {
     var year = gitDate.substring(0,4);
