@@ -16,7 +16,7 @@ function pageLoad() {
     }
     doFadeIn(0);
 }
-
+//Last commit test on master branch
 function doFadeIn(x) {
     $("#post"+x).fadeIn(1000)
     //alert(x);
