@@ -1,9 +1,30 @@
 $(document).ready(function() {
-    loadCommits("71170842",$("comlistgame"), 10);
+	
+	//This sets async:false which is NOT okay, but I can't figure out how to do it another way. If anyone can figure it out go for it, but this is how it is right now.
+	loadCommits("71170842",$("#comlistgame"), 10);
     
     loadCommits("75451699",$("#comlistsite"), 10);
    
 });
+
+//Function, xtra function, param
+function callAsync(f, xf, param) {
+	setTimeout(function() {
+		if(param != null)
+			f(param);
+		else
+			f();
+		if(xf != null)
+			xf();
+	},0);
+}
+
+function loadCommits(singleParam) {
+	var id = singleParam.id;
+	var $element = singleParam.$element;
+	var max = singleParam.max;
+	loadCommits(id,$element, max);
+}
 
 //This is the code in case this never works
 
@@ -74,32 +95,37 @@ function loadCommits(repoId, $element, max) {
     //First find branches
     //Get commits from each branch then order by date
     //Put top (max) in element
+	$.ajaxSetup({async:false});
     $.get("https://api.github.com/repositories/" + repoId + "/branches", function(val) {
         //Retrieved
-        $branchArray = val;
-        $commitArray = [];
-        for (var i = 0; i < $branchArray.length; i++) {
-            //Inside branch i
-            $.get("https://api.github.com/repositories/" + repoId + "/commits?sha=" + $branchArray[i].name, function(coms) {
-                //At commits for branch i
-                var $branchICommits = coms;
-                alert($branchICommits[i].commit.author.name);
-                for(var x = 0; x < $branchICommits.length; x++) {
-                    $commitArray.push($branchICommits[x]);
-                }
-            });
-        }
-        var $commitObjs = [];
-        alert($commitArray.length);
-        for(var i = 0; i < $commitArray.length; i++) {
-            $commitObjs.push(createCommitObject($commitArray[i]));
-        }
+			var $branchArray = val;
+			var $commitArray = [];
+		
+			for (var i = 0; i < $branchArray.length; i++) {
+				//Inside branch i
+			
+				$.get("https://api.github.com/repositories/" + repoId + "/commits?sha=" + $branchArray[i].name, function(coms) {
+					//At commits for branch i
+					var $branchICommits = coms;
+					//alert($branchICommits[i].commit.author.name);
+					for(var x = 0; x < $branchICommits.length; x++) {
+						$commitArray.push($branchICommits[x]);
+					}
+				
+				});
+			
+			}
+			var $commitObjs = [];
+			//alert("Commit array length: " + $commitArray.length);
+			for(var i = 0; i < $commitArray.length; i++) {
+				$commitObjs.push(createCommitObject($commitArray[i]));
+		}
         $commitObjs = simplifyCommitArrayToMap($commitObjs);
         $commitObjs = orderCommitObjsFromMap($commitObjs);
         //This SHOULD get all the commits
         
         //This should stop when its ordered from [0] youngest to [max] oldest;
-        
+      //  alert("length: " + $commitObjs.length);
         var commitsString = "";
         commitsString+="<table class=\"comtable\">";
         if (max > $commitObjs.length) {
@@ -117,6 +143,7 @@ function loadCommits(repoId, $element, max) {
         
         $element.html(commitsString);
     });
+	$.ajaxSetup({async:true});
 }
 
 
@@ -205,7 +232,7 @@ var CommitItem = function(message,author,date,url,sha) {
         var thisMinute = getHourFromDate(this.date);
         var thisSecond = getSecondFromDate(this.date);
         //Terms of year
-        alert(thisYear + " " + thisMonth + " " + thisDay + " " + thisHour + " " + thisMinute + " " + thisSecond);
+       // alert(thisYear + " " + thisMonth + " " + thisDay + " " + thisHour + " " + thisMinute + " " + thisSecond);
         return (thisYear) + (thisMonth / 12) + (thisDay / 365) + (thisHour / 8760) + (thisMinute / 525600) + (thisSecond / 31536000);
     }
 }
