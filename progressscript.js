@@ -132,7 +132,7 @@ function loadCommits(repoId, $element, max) {
 
 //Creates a commit object (helps reduce code lines + improve readability)
 function createCommitObject(commitPre) {
-    return new CommitItem(commitPre.commit.message,commitPre.commit.author.name,commitPre.commit.author.date, commitPre.html_url);
+    return new CommitItem(commitPre.commit.message,commitPre.commit.author.name,commitPre.commit.author.date, commitPre.html_url, commitPre.sha);
 }
 
 //Formats message to make it look nice in the table
@@ -151,11 +151,15 @@ function formatMessage(message) {
 
 
 //Constructor for CommitItem(msg,auth,date,url)
-var CommitItem = function(message,author,date,url) {
+var CommitItem = function(message,author,date,url,sha) {
     this.author = author;
     this.message = message;
     this.date = date;
     this.url = url;
+    this.sha = sha;
+    this.equals = function(commit) {
+        return (this.sha === commit.sha);   
+    }
     //Compares two commit dates
     this.compareDate = function(commit) {
           //Return 0 for same (almost impossible), 1 for older, -1 for younger
