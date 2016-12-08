@@ -94,22 +94,10 @@ function loadCommits(repoId, $element, max) {
         for(var i = 0; i < $commitArray.length; i++) {
             $commitObjs.push(createCommitObject($commitArray[i]));
         }
-        $commitObjs = simplifyCommitArray($commitObjs);
+        $commitObjs = simplifyCommitArrayToMap($commitObjs);
         $commitObjs = orderCommitObjsFromMap($commitObjs);
         //This SHOULD get all the commits
-        changed = true;
-        while (changed) {
-            changed = false;
-            for (var i = 0; i < $commitObjs.length-1; i++) {
-                if($commitObjs[i].compareDate($commitObjs[i+1]) < 0) {
-                    var $youngerC = $commitObjs[i];
-                    var $olderC = $commitObjs[i+1];
-                    $commitObjs[i] = $olderC;
-                    $commitObjs[i+1] + $youngerC;
-                    changed = true;
-                }
-            }
-        }
+        
         //This should stop when its ordered from [0] youngest to [max] oldest;
         
         var commitsString = "";
@@ -134,12 +122,31 @@ function loadCommits(repoId, $element, max) {
 
 function orderCommitObjsFromMap($commitsMap) {
     //YOu know what to do/
+    var keyArray = Object.keys($commitsMap);
+    var commitArray = [];
+	for(var i = 0; i < keyArray.length; i++) {
+		commitArray.push($commitsMap[keyArray[i]]);
+	}
+    var changed = true;
+    while(changed) {
+		changed = false;
+		for(var i = 0; i < commitArray.length-1; i++) {
+			if(commitArray[i].date < commitArray[i+1].date) {
+				var com1 = commitArray[i];
+				var com2 = commitArray[i+1];
+				commitArray[i] = com2;
+				commitArray[i+1] = com1;
+				changed = true;
+			}
+		}
+    }
+    return commitArray;
 }
 
 function simplifyCommitArrayToMap($commits) {
     var commitMap = [];
     for(var i = 0; i < $commits.length; i++) {
-        commitMap[$commits[i].sha:$commits[i]];   
+        commitMap[$commits[i].sha] = $commits[i];   
     }
     return commitMap;
 }
