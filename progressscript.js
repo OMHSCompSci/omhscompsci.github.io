@@ -9,7 +9,7 @@ $(document).ready(function() {
             commitsString+=("<tr class=\"commit-item\">");
             name = checkSubs($commitArray[i].commit.author.name) + ", " + formatDate($commitArray[i].commit.author.date);
             commitsString+=("<td>" + name + "</td>");
-            commitsString+=("<td>" + $commitArray[i].commit.message + "</td>");
+            commitsString+=("<td><a href=\"" + $commitArray[i].html_url + "\">" + $commitArray[i].commit.message + "</a></td>");
             commitsString+="</tr>";
         }
         commitsString+="</table>";
@@ -26,11 +26,10 @@ $(document).ready(function() {
             commitsString+=("<tr class=\"commit-item\">");
             name = checkSubs($commitArray[i].commit.author.name) + ", " + formatDate($commitArray[i].commit.author.date);
             commitsString+=("<td>" + name + "</td>");
-            commitsString+=("<td>" + $commitArray[i].commit.message + "</td>");
+            commitsString+=("<td><a href=\"" + $commitArray[i].html_url + "\">" + $commitArray[i].commit.message + "</a></td>");
             commitsString+="</tr>";
         }
         commitsString+="</table>";
-        
         $("#comlistsite").html(commitsString);      //alert($commitArray[0].commit.message);
        });
 });
