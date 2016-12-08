@@ -64,6 +64,9 @@ $.get("https://api.github.com/repositories/71170842/commits", function(val) {
  * figure out how to get all of the commits from the entire
  * repository then order them. It's very difficult (at least for 
  * me). Good luck if you wanna go try to fix this.
+ 
+    A possible solution would be load all commits from main branch, then do other branches. As loading for other branches, dont load 
+    the ones with the same SHA as the ones loaded in the main branch (check $commitObjs to get sha) (the sha isnt included yet but i'll do that soon).
  */
 
 function loadCommits(repoId, $element, max) {
