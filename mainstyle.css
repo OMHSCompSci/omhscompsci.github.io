@@ -31,6 +31,10 @@ body {
     
 }
 
+li.horiznav img {
+    max-height: inherit;
+}
+
 li.horiznav {
     float:left;
     display: block;
@@ -79,6 +83,7 @@ ul.horiznav {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    max-height: 45px;
     top:0;
     width: 100%;
     list-style-type: none;
