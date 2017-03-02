@@ -17,6 +17,10 @@ $(document).ready(function() {
                         for (var i = 0; i < memberArray.length; i++)
                         {
                             var member = memberArray[i];
+                            if(typeof member === "undefined") {
+                                console.log("undefined member");
+                                continue;//member was removed or some other error
+                            }
                             if(member.position.toLowerCase() === "founder") {
                                 founderArray.push(member);
                             } else if (member.position.toLowerCase() === "sponsor") {
